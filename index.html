@@ -1,0 +1,110 @@
+<html> 
+<head> 
+<title>Stick</title> 
+<style>
+ @keyframes slide-in {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+
+  #hello_image {
+    animation: slide-in 40000ms;
+  }
+  
+.text { 
+text-align: center; 
+color: black; 
+text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF; 
+} 
+
+.text { 
+position: absolute; 
+top: 20%; 
+left: 50%; 
+transform: translate(-50%, -50%); 
+} 
+
+#hello_image{
+position:absolute;
+top:30%;
+left:26.5%;
+transform: translate (-50%,-50%);
+-webkit-filter:drop-shadow(5px 5px 5px #4682B4);
+filter: drop-shadow(5px 5px 5px #4682B4);
+}
+body{ 
+background-color: rgba(50, 50, 250, 0.5);
+}
+#demo {
+ position: absolute;
+ top: 10%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+font-family: "Sofia", sans-serif;
+font-size: 30px;
+color: black;
+}
+.rotate {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style>
+<script>
+
+
+var btn =document.getElementById('prodject');
+
+var flag=false;
+
+function playAudio(url) {
+ 
+if (!flag){
+  var audio = new Audio(url);
+
+  
+  audio.loop=true;
+  audio.play();
+  flag=true;}
+
+
+
+}
+</script>
+</head> 
+<body> 
+<p id="demo"></p>
+<div class="container"> 
+<div id="hello_image">
+<img src="images\png-clipart-toothpick-wood-paper-wood-dentistry-handle-transformed.png" class="rotate" width=50% height=auto align = "middle">
+</div>
+<div id="prodject">
+<div class="centered">
+
+<h1 onclick="playAudio('song.mp3')"> Нажми на меня, я волшебная) </h1>
+</div>
+</div>
+
+</div>
+
+<p id="demo"></p>
+<script>
+document.getElementById("hello_image").addEventListener("click", function() {
+ document.getElementById("demo").innerHTML = "Ура!!! Теперь весело))";
+});
+</script>
+</div>
+</div>
+</body> 
+</html> 
